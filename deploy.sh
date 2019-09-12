@@ -11,8 +11,8 @@ for fldr in * ; do
         if test -f "requirements.txt"; then
           pip install --target ./package -r requirements.txt
         fi
-        cd package
-        zip -r9 ${OLDPWD}/$fldr.zip . > /dev/null
+        rm ../$fldr.zip
+        zip -r9 ../$fldr.zip . > /dev/null
         cd $WRKDIR/lambda-functions;
     fi
 
