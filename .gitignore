@@ -1,0 +1,5 @@
+package
+.terraform
+.idea
+venv
+*.zip
