@@ -7,6 +7,13 @@ provider:
   stage: dev
   region: eu-west-3
 
+package:
+  exclude:
+    - layers/**
+    - node_modules/**
+    - venv/**
+    - package-lock.json
+
 layers:
   chromium:
     compatibleRuntimes:
