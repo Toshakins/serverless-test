@@ -3,7 +3,7 @@ service: serverless-test
 provider:
   name: aws
   runtime: python3.7
-
+  profile: my_admin
   stage: dev
   region: eu-west-3
 
