@@ -1,0 +1,32 @@
+service: serverless-test
+
+provider:
+  name: aws
+  runtime: python3.7
+
+  stage: dev
+  region: eu-west-3
+
+layers:
+  chromium:
+    compatibleRuntimes:
+      - python3.7
+    allowedAccounts:
+      - '*'
+    package:
+      artifact: layers/chromium/stable-headless-chromium-amazonlinux-2017-03.zip
+
+
+functions:
+  hello:
+    handler: handler.hello
+    layers:
+      - { Ref: ChromiumLambdaLayer }
+
+plugins:
+  - serverless-python-requirements
+
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
