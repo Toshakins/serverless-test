@@ -5,7 +5,7 @@ provider:
   runtime: python3.7
   profile: my_admin
   stage: dev
-  region: eu-west-3
+  region: eu-central-1
 
 package:
   exclude:
